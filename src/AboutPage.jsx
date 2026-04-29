@@ -4,7 +4,8 @@ import imgJosta from './assets/Josta.jpg';
 import imgBrushes from './assets/Brushes.jpg';
 
 export default function AboutPage() {
-  const steps = [
+ {/*Stepper Array*/}
+    const steps = [
     { title: "Select Service", desc: "Select desired service and fill in your details." },
     { title: "Estimate", desc: "Get an estimate quotation." },
     { title: "Final Quote", desc: "Site inspection and final quote." },
@@ -14,7 +15,7 @@ export default function AboutPage() {
   return (
     <div className="relative min-h-screen font-playfair text-white overflow-hidden">
       
-      {/* 1. Backdrop & Gradient Effect */}
+      {/*BackDrop*/}
       <div className="fixed inset-0 z-0">
         <img 
           src={imgBlackBackdrop} 
@@ -26,7 +27,7 @@ export default function AboutPage() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-8 md:px-16 pt-40 pb-32 space-y-40">
         
-        {/* 2. Section: Our Origins */}
+        {/* Origins*/} 
         <section className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <div>
             <h2 className="text-5xl md:text-6xl font-bold mb-10 tracking-tight">Our Origins</h2>
@@ -49,8 +50,7 @@ export default function AboutPage() {
             />
           </div>
         </section>
-
-        {/* 3. Section: Our Philosophy */}
+{/*Our Philosophy*/} 
         <section className="grid grid-cols-1 md:grid-cols-2 gap-20 items-center">
           <div>
             <h2 className="text-5xl md:text-6xl font-bold mb-10 tracking-tight">Our Philosophy</h2>
@@ -74,18 +74,18 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 4. Section: Easy as One Two Three (Updated Stepper) */}
+        {/* Updated Steppe) */}
         <section className="pb-20">
           <h2 className="text-5xl md:text-6xl font-bold mb-20 tracking-tight text-left">Easy as One Two Three... Four</h2>
           <p className="font-playfair"></p>
           
           <div className="relative flex flex-col md:flex-row justify-between items-start gap-8">
-            {/* The Connecting Line (Desktop Only) */}
+        
             <div className="hidden md:block absolute top-8 left-0 w-full h-0.5 bg-white/20 z-0"></div>
 
             {steps.map((step, index) => (
               <div key={index} className="relative z-10 flex flex-col items-center text-center space-y-6 flex-1">
-                {/* Numeric Circle */}
+               
                 <div className="w-16 h-16 bg-white/10 backdrop-blur-md border-2 border-white/40 rounded-full flex items-center justify-center text-2xl font-bold shadow-lg">
                   {index + 1}
                 </div>

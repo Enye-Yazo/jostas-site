@@ -50,7 +50,7 @@ export default function Hero() {
           </span>
         </h1>
         
-        {/* Liquid Glass CTA Button */}
+        {/* Liquid Glass Button */}
         <HashLink 
           smooth 
           to="/services#contact"

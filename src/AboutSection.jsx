@@ -36,7 +36,7 @@ export default function AboutSection() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-16 items-start">
           
-          {/* New SEO Text Content */}
+        
           <div className="md:col-span-2 space-y-8 text-lg text-gray-300 leading-relaxed font-light font-display">
             
             {/* Section 1 */}
@@ -58,19 +58,19 @@ export default function AboutSection() {
               </p>
               <ul className="space-y-4">
                 <li className="flex items-start">
-                  <span className="text-white mr-4 mt-1 opacity-70">✦</span>
+                  <span className="text-white mr-4 mt-1 opacity-70">●</span>
                   <span><strong className="text-white font-medium">Residential Expertise:</strong> From cozy bedrooms to grand living areas, our interior painting services use premium finishes to reflect your personal style.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-white mr-4 mt-1 opacity-70">✦</span>
+                  <span className="text-white mr-4 mt-1 opacity-70">●</span>
                   <span><strong className="text-white font-medium">Commercial Reliability:</strong> We provide durable, high-quality exterior painting and commercial solutions that help businesses make a powerful first impression.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-white mr-4 mt-1 opacity-70">✦</span>
+                  <span className="text-white mr-4 mt-1 opacity-70">●</span>
                   <span><strong className="text-white font-medium">Intentional Craftsmanship:</strong> Every brushstroke is intentional. We prioritize meticulous surface preparation and clean, sharp lines to ensure a flawless finish every time.</span>
                 </li>
                 <li className="flex items-start">
-                  <span className="text-white mr-4 mt-1 opacity-70">✦</span>
+                  <span className="text-white mr-4 mt-1 opacity-70">●</span>
                   <span><strong className="text-white font-medium">End-to-End Care:</strong> From the initial color consultation to the final walkthrough, we treat your property with the respect it deserves.</span>
                 </li>
               </ul>
@@ -82,7 +82,7 @@ export default function AboutSection() {
               <p className="mb-6">
                 Based on years of industry experience, Josta’s Painting has earned a reputation for reliability, transparency, and artistic excellence. We understand that your home or business is your greatest investment. That’s why we use only high-grade, eco-friendly materials designed to withstand the test of time.
               </p>
-              <p className="text-xl text-white font-medium italic">
+              <p className="text-xl text-white font-medium">
                 Ready to transform your property? Let Josta’s Painting bring your vision to life with professional expertise you can trust.
               </p>
             </div>
@@ -95,7 +95,7 @@ export default function AboutSection() {
             </div>
           </div>
 
-          {/* Dynamic Height Carousel */}
+          {/*  Carousel */}
           <div className="md:col-span-1 relative h-[400px] md:h-[500px] lg:h-[600px] rounded-[40px] overflow-hidden border-4 border-white/20 shadow-2xl cursor-pointer group" onClick={() => setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1))}>
             {images.map((img, index) => (
               <img

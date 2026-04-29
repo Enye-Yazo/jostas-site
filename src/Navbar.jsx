@@ -8,7 +8,7 @@ export default function Navbar() {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  // Logic to hide/show menu based on scroll direction
+  // hide/show menu based on scroll direction
   useEffect(() => {
     const controlNavbar = () => {
       if (window.scrollY > lastScrollY && window.scrollY > 100) {
@@ -44,9 +44,6 @@ export default function Navbar() {
         </li>
         <li>
           <Link to="/services" className="hover:text-black transition-colors duration-300">Services</Link>
-        </li>
-        <li>
-          <Link to="/contact" className="hover:text-black transition-colors duration-300">Contact Us</Link>
         </li>
       </ul>
       {/* Mobile Menu Button */}

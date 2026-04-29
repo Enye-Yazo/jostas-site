@@ -10,7 +10,7 @@ export default function Services() {
   const [turnstileToken, setTurnstileToken] = useState('');
   const [formStatus, setFormStatus] = useState('idle'); // 'idle', 'submitting', 'success', 'error'
 
-  // array tile
+  {/*array tile */} 
  const services = [
     { title: "Residential", icon: <FaHouse className="w-7 h-7" />, short: "Premium home painting services.", long: "Our residential services include full interior and exterior painting, decorative finishes, and meticulous surface preparation." },
     { title: "Commercial", icon: <FaBuilding className="w-7 h-7" />, short: "Professional solutions for business.", long: "We provide scalable painting solutions for offices, retail spaces, and industrial buildings." },
@@ -24,7 +24,7 @@ export default function Services() {
     e.preventDefault();
     setFormStatus('submitting');
 
-    // Gather all form data securely
+    {/* Gather all form data securely */}
     const formData = new FormData(e.target);
     formData.append("access_key", "0b088ced-bd24-4ca3-b350-6c429db79654");
     
@@ -56,7 +56,7 @@ export default function Services() {
   return (
     <div className="relative min-h-screen font-playfair text-white overflow-x-hidden">
       
-      {/* Background */}
+  {/*Backdrop*/}
       <div className="fixed inset-0 z-0">
         <img src={imgBlackBackdrop} className="w-full h-full object-cover blur-md scale-105 opacity-80" alt="Backdrop" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/80"></div>
@@ -84,14 +84,14 @@ export default function Services() {
           ))}
         </div>
 
-        {/* --- NEW SECTION: Contact Form --- */}
+       {/*Backdrop*/}
         <section className="mt-40 max-w-3xl mx-auto bg-white/5 backdrop-blur-lg border border-white/20 p-10 md:p-16 rounded-[60px] shadow-2xl">
           <h2 className="text-5xl md:text-6xl font-bold tracking-tight mb-2">Like what you see?</h2>
           <p className="text-xl text-gray-400 italic mb-12">- reach out to us</p>
 
           <form onSubmit={handleSubmit} className="space-y-6">
             
-            {/* Service Dropdown */}
+             {/*Dropdwon box */}
             <div>
               <select name="service" required className="w-full bg-black/40 border border-white/30 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-white transition-colors appearance-none cursor-pointer">
                 <option value="" disabled selected>Select a Service</option>
@@ -105,19 +105,18 @@ export default function Services() {
             <div>
               <textarea name="message" required rows="4" placeholder="Please tell us more about your request" className="w-full bg-black/40 border border-white/30 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-white transition-colors resize-none"></textarea>
             </div>
-
-            {/* Contact Details Grid */}
+{/*contact details */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="md:col-span-2">
                 <input type="text" name="name" required placeholder="Name" className="w-full bg-black/40 border border-white/30 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-white transition-colors" />
               </div>
               
-              {/* Validated Email Input */}
+              {/*email validation */}
               <div>
                 <input type="email" name="email" required pattern="[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$" title="Please enter a valid email address." placeholder="Email" className="w-full bg-black/40 border border-white/30 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-white transition-colors" />
               </div>
 
-              {/* Validated Phone Input */}
+             {/*Phone validation */}
               <div>
                 <input type="tel" name="phone" required pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number." placeholder="Phone (e.g. 0812345678)" className="w-full bg-black/40 border border-white/30 rounded-2xl px-6 py-4 text-white focus:outline-none focus:border-white transition-colors" />
               </div>
@@ -132,11 +131,10 @@ export default function Services() {
               />
             </div>
 
-            {/* Status Messages */}
+             {/*Status response */}
             {formStatus === 'success' && <p className="text-green-400 text-center font-medium">Message sent successfully! We will be in touch.</p>}
             {formStatus === 'error' && <p className="text-red-400 text-center font-medium">Something went wrong. Please try again later.</p>}
 
-            {/* Protected Submit Button */}
             <button 
               type="submit" 
               disabled={!turnstileToken || formStatus === 'submitting'}
@@ -157,7 +155,7 @@ export default function Services() {
                 {activeService.icon}
               </div>
               <h2 className="text-4xl font-bold mb-6 text-center">{activeService.title}</h2>
-              <p className="text-xl leading-relaxed text-gray-200 text-center italic">{activeService.long}</p>
+              <p className="text-xl leading-relaxed text-gray-200 text-center font-display">{activeService.long}</p>
             </div>
           </div>
         )}
