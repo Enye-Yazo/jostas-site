@@ -6,11 +6,11 @@ import { FaHouse, FaBuilding, FaCouch, FaTrowelBricks, FaScroll, FaPalette } fro
 export default function Services() {
   const [activeService, setActiveService] = useState(null);
   
-  // Form State
+  
   const [turnstileToken, setTurnstileToken] = useState('');
   const [formStatus, setFormStatus] = useState('idle'); // 'idle', 'submitting', 'success', 'error'
 
-  // Refactored Services Array with unique icon placeholders
+  // array tile
  const services = [
     { title: "Residential", icon: <FaHouse className="w-7 h-7" />, short: "Premium home painting services.", long: "Our residential services include full interior and exterior painting, decorative finishes, and meticulous surface preparation." },
     { title: "Commercial", icon: <FaBuilding className="w-7 h-7" />, short: "Professional solutions for business.", long: "We provide scalable painting solutions for offices, retail spaces, and industrial buildings." },
@@ -37,14 +37,18 @@ export default function Services() {
         body: formData
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (result.success) {
         setFormStatus('success');
         e.target.reset(); // Clear the form
         setTurnstileToken(''); // Reset Turnstile
       } else {
+        console.error('Web3Forms error:', result);
         setFormStatus('error');
       }
     } catch (error) {
+      console.error('Form submission error:', error);
       setFormStatus('error');
     }
   };
@@ -69,8 +73,8 @@ export default function Services() {
               onClick={() => setActiveService(service)}
               className="bg-white/10 backdrop-blur-md border border-white/20 p-10 rounded-[40px] cursor-pointer hover:bg-white/20 transition-all duration-300 flex flex-col items-center text-center shadow-2xl"
             >
-              {/* Refactored Icon Area */}
-              {/* Refactored Icon Area */}
+              
+             
               <div className="w-16 h-16 border border-white/40 rounded-full flex items-center justify-center mb-6 text-white">
                 {service.icon}
               </div>
